@@ -5,7 +5,5 @@ services:
     build: ./backend
     ports: 
       - 8000:8000
-    environment:
-      - PRODUCTION=1
     image: "placeholder-app"
     container_name: "placeholder-app"
