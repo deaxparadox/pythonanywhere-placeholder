@@ -5,11 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'placeholder/css/index.css' %}">
 </head>
 <body>
-    {% block content %}
-    {% endblock content %}
-    
+
+    {% include "placeholder/include/navbar.html" %}
+
+    <div id="row">
+        <div id="left">
+            {% block left %}{% endblock left %}
+        </div>
+        <div id="center">
+            {% block center %}{% endblock center %}
+        </div>
+        <div id="right">
+            {% block right %}{% endblock right %}
+        </div>
+    </div>
+
+    {% include "placeholder/include/footer.html" %}
+
+    <script defer src="{% static 'placeholder/js/index.js' %}"></script>
 </body>
 </html>

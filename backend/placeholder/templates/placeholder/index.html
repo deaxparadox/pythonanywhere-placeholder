@@ -1,16 +1,20 @@
 {% extends 'base_placeholder.html' %}
-{% block content %}
-<ul>
-    {% for user in userinfo %}
-        <div class="userinfo">
-            <ul>
-                <li>{{ user.id }}</li>
-                <li>{{ user.user }}</li>
-                <li>{{ user.email }}</li>
-                <li>{{ user.address }}</li>
-            </ul>
-        </div>
 
+{% block title %}
+    Placeholder
+{% endblock title %}
+{% block center %}
+
+<div id="users">
+    {% for user in userinfo %}
+        <a href="#" id="user-link">
+            <ul>
+                {% comment %} <li>{{ user.id }}</li> {% endcomment %}
+                <li>Name: <strong>{{ user.user }}</strong></li>
+                <li>Email: <strong>{{ user.email }}</strong></li>
+                <li>Address: <strong>{{ user.address }}</strong></li>
+            </ul>
+        </a>
     {% endfor %}
-</ul>
-{% endblock content %}
+</div>
+{% endblock center %}
